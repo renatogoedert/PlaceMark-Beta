@@ -4,6 +4,7 @@ const { Schema } = Mongoose;
 
 const placemarkSchema = new Schema({
   name: String,
+  img: String,
   userid: {
     type: Schema.Types.ObjectId,
     ref: "User",
