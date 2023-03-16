@@ -79,4 +79,4 @@ export const testPlaces = [
   }
 ];
 
-export const serviceUrl = "http://localhost:3000";
+export const serviceUrl = "https://placemark-beta123.onrender.com";
