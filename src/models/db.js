@@ -11,6 +11,10 @@ import { userMongoStore } from "./mongo/user-mongo-store.js";
 import { placemarkMongoStore } from "./mongo/placemark-mongo-store.js";
 import { placeMongoStore } from "./mongo/place-mongo-store.js";
 
+import { userFireStore } from "./firebase/user-fire-store.js";
+import { placemarkFireStore } from "./firebase/placemark-fire-store.js";
+import { placeFireStore } from "./firebase/place-fire-store.js";
+
 export const db = {
   userStore: null,
   placemarkStore: null,
@@ -28,6 +32,11 @@ export const db = {
         this.placemarkStore = placemarkMongoStore;
         this.placeStore = placeMongoStore;
         connectMongo();
+        break;
+        case "firebase":
+        this.userStore = userFireStore;
+        this.placemarkStore = placemarkFireStore;
+        this.placeStore = placeFireStore;
         break;
       default:
         this.userStore = userMemStore;

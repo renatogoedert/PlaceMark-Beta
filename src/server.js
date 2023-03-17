@@ -24,6 +24,13 @@ if (result.error) {
   process.exit(1);
 }
 
+Handlebars.registerHelper("ifCond", function(v1, v2, options) {
+  if(v1 === v2) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
 const swaggerOptions = {
   info: {
     title: "Placemark API",
@@ -88,7 +95,7 @@ async function init() {
     layout: true,
     isCached: false,
   });
-  db.init("mongo");
+  db.init("firebase");
   server.route(webRoutes);
   server.route(apiRoutes);
   await server.start();

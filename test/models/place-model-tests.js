@@ -8,7 +8,7 @@ suite("Place Model tests", () => {
   let beachesList = null;
 
   setup(async () => {
-    db.init("mongo");
+    db.init("firebase");
     await db.placemarkStore.deleteAllPlacemarks();
     await db.placeStore.deleteAllPlaces();
     beachesList = await db.placemarkStore.addPlacemark(beaches);

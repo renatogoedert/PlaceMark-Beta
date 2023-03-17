@@ -10,7 +10,9 @@
   </thead>
   <tbody>
     {{#each users}}
-      <tr>
+    <tr>
+      {{#ifCond firstName "Admin"}}
+      {{else}}
         <td>
           {{firstName}}
         </td>
@@ -28,6 +30,7 @@
             <i class="fas fa-trash"></i>
           </a>
         </td>
+        {{/ifCond}}
       </tr>
     {{/each}}
   </tbody>

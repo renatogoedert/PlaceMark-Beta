@@ -7,6 +7,8 @@
   "scripts": {
     "start": "node src/server.js",
     "test": "mocha --timeout 10000 --ui tdd test/**/*.js -exit",
+    "testapi": "mocha --timeout 10000 --ui tdd test/api/**/*.js -exit",
+    "testmodels": "mocha --timeout 10000 --ui tdd test/models/**/*.js -exit",
     "dev": "npx nodemon  src/server.js",
     "lint": "eslint . --ext .js"
   },
