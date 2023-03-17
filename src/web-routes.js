@@ -3,6 +3,7 @@ import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 import { placemarkController } from "./controllers/placemark-controller.js";
 import { adminController } from "./controllers/admin-controller.js";
+import { placeController } from "./controllers/place-controller.js";
 
 export const webRoutes = [
   { method: "GET", path: "/", config: accountsController.index },
@@ -22,6 +23,8 @@ export const webRoutes = [
   { method: "POST", path: "/placemark/{id}/addplace", config: placemarkController.addPlace },
   { method: "GET", path: "/placemark/{id}/deleteplace/{placeid}", config: placemarkController.deletePlace },
   { method: "POST", path: "/placemark/{id}/uploadimage", config: placemarkController.uploadImage },
+
+  { method: "POST", path: "/place/{id}/uploadimage", config: placeController.uploadImage },
 
   { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
 

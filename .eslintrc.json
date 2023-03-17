@@ -12,10 +12,6 @@
       "sourceType": "module"
     },
     "rules": {
-      "quotes": [
-        "error",
-        "double"
-      ],
       "import/extensions": "off",
       "import/prefer-default-export": "off",
       "import/no-extraneous-dependencies": "off",
@@ -26,6 +22,7 @@
       "no-param-reassign": "off",
       "no-undef": "off",
       "func-names": "off",
-      "no-console": "off"
+      "no-console": "off",
+      "quotes": "off"
     }
   }

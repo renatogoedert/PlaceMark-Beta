@@ -1,34 +1,41 @@
 <table class="table is-fullwidth">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Lat</th>
-      <th>Lon</th>
-      <th>Description</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each placemark.places}}
-      <tr>
-        <td>
-          {{name}}
-        </td>
-        <td>
-          {{lat}}
-        </td>
-        <td>
-          {{lon}}
-        </td>
-        <td>
-          {{des}}
-        </td>
-        <td>
-          <a href="/placemark/{{../placemark._id}}/deleteplace/{{_id}}" class="ui icon button">
+  {{#each placemark.places}}
+  <div class="card">
+    
+    {{> place-image }}
+
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+        <p class="title is-4"> {{name}}</p>
+      </div>
+    </div>
+
+    <div class="content">
+      {{des}}
+        </div>
+    </div>
+    
+    <footer class="card-footer">
+    <p class="card-footer-item">
+      <span>
+        Latitude: {{lat}}
+      </span>
+    </p>
+    <p class="card-footer-item">
+      <span>
+        Longitude: {{lon}}
+      </span>
+    </p>
+    <p class="card-footer-item">
+      <span>
+        <a href="/placemark/{{../placemark._id}}/deleteplace/{{_id}}" class="ui icon button">
             <i class="fas fa-trash"></i>
           </a>
-        </td>
-      </tr>
-    {{/each}}
-  </tbody>
+      </span>
+    </p>
+  </footer>
+    </div>
+  </div>
+  {{/each}}
 </table>

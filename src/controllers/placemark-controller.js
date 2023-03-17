@@ -53,10 +53,10 @@ export const placemarkController = {
           placemark.img = url;
           await db.placemarkStore.updatePlacemark(placemark);
         }
-        return h.redirect(`/placemark/${placemark._id}`);
+        return h.redirect(`/dashboard`);
       } catch (err) {
         console.log(err);
-        return h.redirect(`/placemark/${placemark._id}`);
+        return h.redirect(`/dashboard`);
       }
     },
     payload: {
